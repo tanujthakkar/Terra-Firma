@@ -48,36 +48,36 @@ public class MainActivity extends AppCompatActivity {
         // Light Intensity Firebase Variable
         final DatabaseReference light = myRef.child("/light");
 
-//        tv_temp = (TextView)findViewById(R.id.tv_temp);
-//        tv_humidity = (TextView)findViewById(R.id.tv_humidity);
+        tv_temp = (TextView)findViewById(R.id.tv_temp);
+        tv_humidity = (TextView)findViewById(R.id.tv_humidity);
         tv_light = (TextView)findViewById(R.id.tv_light);
         status = (ImageView)findViewById(R.id.status);
 
-//        temperature.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                int value = dataSnapshot.getValue(int.class);
-//                tv_temp.setText("Temperature :" + Integer.toString(value));
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        humidity.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                int value = dataSnapshot.getValue(int.class);
-//                tv_humidity.setText("Humidity : " + Integer.toString(value));
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+        temperature.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int value = dataSnapshot.getValue(int.class);
+                tv_temp.setText("Temperature :" + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        humidity.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int value = dataSnapshot.getValue(int.class);
+                tv_humidity.setText("Humidity : " + Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         light.addValueEventListener(new ValueEventListener() {
             @Override

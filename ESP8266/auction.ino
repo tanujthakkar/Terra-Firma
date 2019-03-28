@@ -1,18 +1,23 @@
+// Setting up ESP8266 libraries and WiFi
 #include <ESP8266WiFi.h>
 #define WIFI_SSID "Your WiFi SSID"
 #define WIFI_PASSWORD "Your WiFi Password"
 #define WIFI_LED BUILTIN_LED
 
+// Setting up DHT sensor dependencies, pin and object variables
+#include "DHT.h"
+#define DHT_PIN_DATA 5
+DHT dht(DHT_PIN_DATA);
+
+// Setting up Firebase with mandatory details
 #include <FirebaseArduino.h>
 #define FIREBASE_HOST "Your database URL"
 #define FIREBASE_AUTH "Your database secret"
 
 // Sensor Data Variables
-int humidity;
-int temperature;
+float humidity;
+float temperature;
 int ldr;
-
-String m;
 
 void setup() {
   
@@ -36,17 +41,27 @@ void setup() {
   Serial.println("IP Address: ");
   Serial.println(WiFi.localIP());
 
+  // Initializing DHT sensor
+  dht.begin();
+
+  // Initializing Firebase connection
   Firebase.begin(FIREBASE_HOST);  
 }
 
 void loop() {
 
-  ldr = analogRead(A0);
+  humidity = dht.readHumidity();    // Retrieving humidity data
+  temperature = dht.readTempC();    // Retrieving temperature data
+
+  Firebase.setInt("/humidity", int(humidity));    // Updating humidity data to Firebase
+  Firebase.setInt("/temperature", int(temperature));    // Updating temperature data to Firebase
+
+  ldr = analogRead(A0);   // Retrieving LDR data
   ldr = map(ldr, 0, 1023, 0, 100);
   if(ldr >= 70) {
     digitalWrite(D2, LOW);
   } else {
     digitalWrite(D2, HIGH);
   }
-  Firebase.setInt("/light", ldr);
+  Firebase.setInt("/light", ldr);   // Updating LDR data to Firebase
 }
