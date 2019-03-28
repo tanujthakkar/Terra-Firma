@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="button_default">#D2D2D2</color>
+    <color name="line_default">#FFFFFF</color>
+    <color name="status_active">#3CBA54</color>
+    <color name="status_inactive">#DB3236</color>
+    <color name="status_auto">#4885ED</color>
+</resources>

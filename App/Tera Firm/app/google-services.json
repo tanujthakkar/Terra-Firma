@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "30528060633",
+    "firebase_url": "https://tera-firma.firebaseio.com",
+    "project_id": "tera-firma",
+    "storage_bucket": "tera-firma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30528060633:android:e99f844055ae0038",
+        "android_client_info": {
+          "package_name": "com.auction.terafirm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30528060633-uqbqr7u32iq00b2rmnd7c7delqc0igr6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.auction.terafirm",
+            "certificate_hash": "a9b88cd23c1a876e1255cdc1c722c5c1faf1f9cc"
+          }
+        },
+        {
+          "client_id": "30528060633-n47mkj7810vdspjto1s1pfpcs02l87mk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcv_woX4qChPOIIUbcixmVmrMPtMZ9zPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30528060633-n47mkj7810vdspjto1s1pfpcs02l87mk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
